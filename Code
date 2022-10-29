@@ -1,0 +1,206 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+ 
+local Window = Rayfield:CreateWindow({
+Name = "FE Hub",
+LoadingTitle = "Welcome to FE Hub",
+LoadingSubtitle = "by Baldipower2",
+ConfigurationSaving = {
+	Enabled = true,
+	FileName = "FE Hub",
+},
+KeySystem = true, -- Set this to true to use our key system
+KeySettings = {
+	Title = "FE Hub",
+	Subtitle = "Key System",
+	Note = "Join the server for the key! (discord.gg/fAqGuhh6eK)",
+	Key = "Tm5JKCuNZgpCgXUiD49V"
+}
+})
+
+local Tab = Window:CreateTab("Scripts")
+local Section = Tab:CreateSection("Version: v1.0")
+Rayfield:Notify("Warning","This GUI is still under development. You may expect bugs here!",10010348543) -- (t,c,image)
+
+local Label = Tab:CreateLabel("Scripts")
+
+local Button = Tab:CreateButton({
+	Name = "Infinite Yield",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Fly",
+	Callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/8jxtf3Zk'))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Chat Bypass",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Slrrs/FEHUB/main/ChatBypass'))()
+	end,
+})
+
+
+local Button = Tab:CreateButton({
+	Name = "Destroy GUI",
+	Callback = function()
+        Rayfield:Destroy()
+	end,
+})
+
+local Label = Tab:CreateLabel("Character Scripts")
+
+local Slider = Tab:CreateSlider({
+	Name = "WalkSpeed",
+	Range = {0, 100},
+	Increment = 1,
+	Suffix = "Speed",
+	CurrentValue = 16,
+	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Reset WalkSpeed",
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        Slider:Set(16) -- The new slider integer value
+	end,
+})
+
+local Slider = Tab:CreateSlider({
+    Name = "JumpPower",
+    Range = {0, 100},
+    Increment = 1,
+    Suffix = "Power",
+    CurrentValue = 50,
+    Flag = "Slider2", 
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+    end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Reset JumpPower",
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        Slider:Set(50) -- The new slider integer value
+	end,
+})
+
+
+local Button = Tab:CreateButton({
+	Name = "Reset Character",
+	Callback = function()
+		game:GetService'Players'.LocalPlayer.Character['Head']:Destroy()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "No Arms - R6",
+	Callback = function()
+        Rayfield:Notify("Script Warning","You must reset your character if you want to reverse this script!",10010348543) -- (t,c,image)
+		game:GetService'Players'.LocalPlayer.Character['Left Arm']:Destroy()
+        game:GetService'Players'.LocalPlayer.Character['Right Arm']:Destroy()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "No Legs - R6",
+	Callback = function()
+        Rayfield:Notify("Script Warning","You must reset your character if you want to reverse this script!",10010348543) -- (t,c,image)
+        game:GetService'Players'.LocalPlayer.Character['Left Leg']:Destroy()
+        game:GetService'Players'.LocalPlayer.Character['Right Leg']:Destroy()
+
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "No Limbs - R6",
+	Callback = function()
+        Rayfield:Notify("Script Warning","You must reset your character if you want to reverse this script!",10010348543) -- (t,c,image)
+        game:GetService'Players'.LocalPlayer.Character['Left Leg']:Destroy()
+        game:GetService'Players'.LocalPlayer.Character['Right Leg']:Destroy()
+		game:GetService'Players'.LocalPlayer.Character['Left Arm']:Destroy()
+        game:GetService'Players'.LocalPlayer.Character['Right Arm']:Destroy()
+
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "No Arms - R15",
+	Callback = function()
+        Rayfield:Notify("Script Warning","You must reset your character if you want to reverse this script!",10010348543) -- (t,c,image)
+		game:GetService'Players'.LocalPlayer.Character.LeftLowerArm:Destroy()
+        game:GetService'Players'.LocalPlayer.Character.LeftUpperArm:Destroy()
+        game:GetService'Players'.LocalPlayer.Character.RightLowerArm:Destroy()
+        game:GetService'Players'.LocalPlayer.Character.RightUpperArm:Destroy()
+	end,
+})
+
+
+local Button = Tab:CreateButton({
+	Name = "Ball - by Zuclz (Rival#0003)",
+	Callback = function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/AA7igmcH', true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Anti AFK",
+	Callback = function()
+
+        Rayfield:Notify("FE HUB Team","Anti AFK Enabled!")
+
+		loadstring(game:HttpGet('https://pastebin.com/raw/EimfRWPj'))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Walk On Walls",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Slrrs/FEHUB/main/WalkOnWalls'))()
+	end,
+})
+
+
+local Tab = Window:CreateTab("Games")
+
+local Button = Tab:CreateButton({
+	Name = "OP GUI - Work at a Pizza Place",
+	Callback = function()
+		loadstring(game:HttpGet("https://gist.githubusercontent.com/TurkOyuncu99/bb2f1182a224999682a2d1a87aa8517a/raw/66c7791224be0434b23938ca26244238649d0143/ameicaa", true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "IceHub - Brookhaven",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+	end,
+})
+
+
+local Button = Tab:CreateButton({
+	Name = "EclipseHub - MM2",
+	Callback = function()
+		local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth"c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
+	end,
+})
+
+local Tab = Window:CreateTab("Questions")
+local Paragraph = Tab:CreateParagraph({Title = "Who made this?", Content = "The current owner of FE Hub is Baldipower2 as of October 26, 2022."})
+local Paragraph = Tab:CreateParagraph({Title = "Why FE Hub?", Content = "FE Hub is a roblox exploit GUI that was created in the starting of August in 2022. The owner, baldipower2 was making this GUI for fun and wished to be popular atleast once. Some scripts he made went popular but ended up getting deleted because he uploaded them in Pastebin. FE Hub started off in a beta stage containing only scripts he made. Then after september aka, ( the delayed disaster ) FE Hub later on died but was revived mid October."})
+
+local Tab = Window:CreateTab("Credits")
+local Label = Tab:CreateLabel("Credits to:")
+local Label = Tab:CreateLabel("(Unkown Memory#6666) Baldipower2 - Owner Scripter")
+local Label = Tab:CreateLabel("(Rival#0003) Zuclz - Scripter")
+
